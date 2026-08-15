@@ -501,6 +501,10 @@ button{
 
   z-index:60;
 
+  margin:0;
+
+  display:block;
+
 }
 
 
@@ -715,6 +719,222 @@ button{
     translate(-50%,0);
 }
 
+
+
+/* =========================================
+   CINEMATIC YES SEQUENCE
+========================================= */
+
+.yes-celebration{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:
+    radial-gradient(circle at 50% 45%,
+      rgba(255,111,145,.18),
+      transparent 42%),
+    rgba(10,5,15,.88);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  overflow:hidden;
+}
+
+.yes-celebration.show{
+  display:flex;
+  animation:yesBgIn .35s ease both;
+}
+
+.yes-scene{
+  width:min(430px,92vw);
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+
+.yes-scene .scene-emoji{
+  font-size:64px;
+  line-height:1;
+  margin-bottom:18px;
+  animation:sceneBounce .7s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.yes-scene .scene-title{
+  font-size:27px;
+  font-weight:800;
+  line-height:1.25;
+  margin:0 0 12px;
+  text-shadow:0 0 28px rgba(255,111,145,.35);
+}
+
+.yes-scene .scene-text{
+  min-height:42px;
+  margin:0 auto;
+  font-size:13px;
+  line-height:1.7;
+  opacity:.78;
+}
+
+.yes-loader{
+  width:min(320px,80vw);
+  height:8px;
+  margin:24px auto 12px;
+  border-radius:99px;
+  background:rgba(255,255,255,.1);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.yes-loader-bar{
+  width:0%;
+  height:100%;
+  border-radius:inherit;
+  background:linear-gradient(90deg,#ff6f91,#f0bb68,#9b8cff);
+  box-shadow:0 0 18px rgba(255,111,145,.5);
+  transition:width .35s ease;
+}
+
+.yes-percent{
+  font-size:11px;
+  opacity:.55;
+}
+
+.yes-news{
+  display:none;
+  margin-top:22px;
+  padding:16px 18px;
+  border-radius:18px;
+  background:rgba(255,255,255,.075);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 15px 45px rgba(0,0,0,.3);
+}
+
+.yes-news.show{
+  display:block;
+  animation:newsPop .55s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.yes-news .breaking{
+  display:inline-block;
+  margin-bottom:9px;
+  padding:5px 10px;
+  border-radius:999px;
+  background:rgba(255,111,145,.15);
+  color:#ff9eb4;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1.2px;
+}
+
+.yes-news strong{
+  display:block;
+  font-size:16px;
+  line-height:1.5;
+}
+
+.yes-news small{
+  display:block;
+  margin-top:6px;
+  opacity:.55;
+  font-size:10px;
+}
+
+.yes-countdown{
+  display:none;
+  font-size:72px;
+  font-weight:800;
+  line-height:1;
+  margin-top:20px;
+  color:#fff;
+  text-shadow:
+    0 0 20px rgba(255,111,145,.7),
+    0 0 55px rgba(139,124,255,.35);
+}
+
+.yes-countdown.show{
+  display:block;
+  animation:countPop .45s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.yes-spark{
+  position:absolute;
+  left:50%;
+  top:50%;
+  pointer-events:none;
+  font-size:22px;
+  animation:sparkFly 1.1s ease-out forwards;
+}
+
+.yes-scene.done .scene-emoji{
+  animation:celebrateBounce .8s ease both;
+}
+
+@keyframes yesBgIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+@keyframes sceneBounce{
+  0%{opacity:0;transform:translateY(20px) scale(.65) rotate(-8deg)}
+  70%{transform:translateY(-8px) scale(1.08) rotate(4deg)}
+  100%{opacity:1;transform:translateY(0) scale(1) rotate(0)}
+}
+
+@keyframes newsPop{
+  from{opacity:0;transform:translateY(18px) scale(.92)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+@keyframes countPop{
+  0%{opacity:0;transform:scale(.45)}
+  70%{opacity:1;transform:scale(1.18)}
+  100%{opacity:1;transform:scale(1)}
+}
+
+@keyframes celebrateBounce{
+  0%{transform:scale(1)}
+  35%{transform:scale(1.25) rotate(-8deg)}
+  65%{transform:scale(.92) rotate(7deg)}
+  100%{transform:scale(1) rotate(0)}
+}
+
+@keyframes sparkFly{
+  0%{
+    opacity:1;
+    transform:translate(-50%,-50%) rotate(0) scale(.4);
+  }
+  100%{
+    opacity:0;
+    transform:
+      translate(
+        calc(-50% + var(--sx)),
+        calc(-50% + var(--sy))
+      )
+      rotate(var(--sr))
+      scale(1.15);
+  }
+}
+
+@keyframes yesShake{
+  0%,100%{transform:translateX(0)}
+  20%{transform:translateX(-8px) rotate(-1deg)}
+  40%{transform:translateX(8px) rotate(1deg)}
+  60%{transform:translateX(-6px)}
+  80%{transform:translateX(6px)}
+}
+
+.yes-shake{
+  animation:yesShake .42s ease;
+}
+
+@media(max-width:480px){
+  .yes-scene .scene-title{font-size:23px}
+  .yes-scene .scene-emoji{font-size:54px}
+  .yes-countdown{font-size:62px}
+}
 
 /* =========================================
    OVERLAY
@@ -1269,6 +1489,53 @@ button{
 </div>
 
 
+
+<!-- CINEMATIC YES CELEBRATION -->
+
+<div class="yes-celebration" id="yesCelebration">
+
+  <div class="yes-scene" id="yesScene">
+
+    <div class="scene-emoji" id="sceneEmoji">😳</div>
+
+    <h2 class="scene-title" id="sceneTitle">
+      WAIT... WHAT?!
+    </h2>
+
+    <p class="scene-text" id="sceneText">
+      Processing your extremely important decision...
+    </p>
+
+    <div class="yes-loader">
+      <div class="yes-loader-bar" id="yesLoaderBar"></div>
+    </div>
+
+    <div class="yes-percent" id="yesPercent">
+      Compatibility check: 0%
+    </div>
+
+    <div class="yes-countdown" id="yesCountdown"></div>
+
+    <div class="yes-news" id="yesNews">
+
+      <span class="breaking">
+        🚨 BREAKING NEWS
+      </span>
+
+      <strong>
+        Nisha has officially agreed to a date with AB Siddik! 💖
+      </strong>
+
+      <small>
+        Coffee Committee • Relationship Department • Just now
+      </small>
+
+    </div>
+
+  </div>
+
+</div>
+
 <!-- YES OVERLAY -->
 
 <div
@@ -1505,6 +1772,34 @@ const finalStep =
 
 const confirmBtn =
   document.getElementById("confirmBtn");
+
+const yesCelebration =
+  document.getElementById("yesCelebration");
+
+const yesScene =
+  document.getElementById("yesScene");
+
+const sceneEmoji =
+  document.getElementById("sceneEmoji");
+
+const sceneTitle =
+  document.getElementById("sceneTitle");
+
+const sceneText =
+  document.getElementById("sceneText");
+
+const yesLoaderBar =
+  document.getElementById("yesLoaderBar");
+
+const yesPercent =
+  document.getElementById("yesPercent");
+
+const yesCountdown =
+  document.getElementById("yesCountdown");
+
+const yesNews =
+  document.getElementById("yesNews");
+
 
 
 /* =========================================
@@ -1767,125 +2062,124 @@ function heartBurst(x,y){
 
 }
 
-
 /* =========================================
    SAFE RANDOM POSITION
 ========================================= */
 
-function getSafePosition(
-  clientX,
-  clientY
-){
+function getSafePosition(clientX, clientY) {
 
-  const rect =
-    noBtn.getBoundingClientRect();
+  const rect = noBtn.getBoundingClientRect();
 
   const margin = 18;
 
-  const width =
-    rect.width;
+  const width = rect.width;
+  const height = rect.height;
 
-  const height =
-    rect.height;
+  const viewportWidth = window.innerWidth;
+  const viewportHeight = window.innerHeight;
 
 
-  const maxX =
+  /* =========================================
+     SAFE BOUNDARIES
+
+     Button-এর পুরো অংশ viewport-এর ভিতরে থাকবে
+  ========================================= */
+
+  const minX = margin;
+  const minY = margin;
+
+  const maxX = Math.max(
+    minX,
+    viewportWidth - width - margin
+  );
+
+  const maxY = Math.max(
+    minY,
+    viewportHeight - height - margin
+  );
+
+
+  /* =========================================
+     AVOID CURSOR / FINGER
+  ========================================= */
+
+  const avoidDistance = Math.min(
+    240,
     Math.max(
-      margin,
-      window.innerWidth -
-      width -
-      margin
-    );
+      130,
+      viewportWidth * 0.22
+    )
+  );
 
 
-  const maxY =
-    Math.max(
-      margin,
-      window.innerHeight -
-      height -
-      margin
-    );
-
-
-  let nx;
-  let ny;
-
-  /*
-    Keep it away from finger/cursor.
-  */
-
-  const avoidDistance =
-    Math.min(
-      240,
-      Math.max(
-        130,
-        window.innerWidth * .22
-      )
-    );
-
+  let nx = minX;
+  let ny = minY;
 
   let tries = 0;
 
+  const hasPointer =
+    typeof clientX === "number" &&
+    typeof clientY === "number";
 
-  do{
+
+  /* =========================================
+     FIND SAFE RANDOM POSITION
+  ========================================= */
+
+  do {
 
     nx =
-      margin +
+      minX +
       Math.random() *
-      Math.max(
-        1,
-        maxX - margin
-      );
+      Math.max(0, maxX - minX);
 
 
     ny =
-      margin +
+      minY +
       Math.random() *
-      Math.max(
-        1,
-        maxY - margin
-      );
+      Math.max(0, maxY - minY);
 
 
     tries++;
 
-  }
+    if (!hasPointer) {
+      break;
+    }
 
-  while(
 
-    clientX !== undefined &&
-
-    clientY !== undefined &&
-
+  } while (
     Math.hypot(
       nx - clientX,
       ny - clientY
     ) < avoidDistance &&
+    tries < 50
+  );
 
-    tries < 20
 
+  /* =========================================
+     FINAL CLAMP
+
+     কোনো অবস্থাতেই button viewport-এর বাইরে যাবে না
+  ========================================= */
+
+  nx = Math.min(
+    Math.max(nx, minX),
+    maxX
+  );
+
+
+  ny = Math.min(
+    Math.max(ny, minY),
+    maxY
   );
 
 
   return {
-
-    x:Math.min(
-      Math.max(nx,margin),
-      window.innerWidth -
-      width -
-      margin
-    ),
-
-    y:Math.min(
-      Math.max(ny,margin),
-      window.innerHeight -
-      height -
-      margin
-    )
-
+    x: Math.round(nx),
+    y: Math.round(ny)
   };
-
 }
+
 
 
 /* =========================================
@@ -1921,16 +2215,23 @@ function moveNoButton(
     No opacity change.
     No disappearing.
   */
-
-
   /*
-    After first interaction,
-    make it fixed.
+     CRITICAL FIX:
+
+     .card has a CSS transform animation.
+     A position:fixed element inside a transformed
+     parent can behave as fixed relative to that
+     parent instead of the real viewport.
+
+     Move the No button directly to <body> before
+     using position:fixed.
   */
 
-  noBtn.classList.add(
-    "fixed-pos"
-  );
+  if (noBtn.parentElement !== document.body) {
+    document.body.appendChild(noBtn);
+  }
+
+  noBtn.classList.add("fixed-pos");
 
 
   /*
@@ -2064,27 +2365,322 @@ noBtn.addEventListener(
    YES BUTTON
 ========================================= */
 
+/* =========================================
+   YES BUTTON — CINEMATIC REACTION
+========================================= */
+
+let yesSequenceRunning = false;
+
+function createYesSparks(count = 18){
+
+  const icons = [
+    "💖","💕","💗","✨","❤️","💘","🌸","⭐"
+  ];
+
+  for(let i = 0; i < count; i++){
+
+    const spark =
+      document.createElement("div");
+
+    spark.className = "yes-spark";
+
+    spark.textContent =
+      icons[
+        Math.floor(
+          Math.random() * icons.length
+        )
+      ];
+
+    spark.style.setProperty(
+      "--sx",
+      (Math.random() * 520 - 260) + "px"
+    );
+
+    spark.style.setProperty(
+      "--sy",
+      (Math.random() * 420 - 210) + "px"
+    );
+
+    spark.style.setProperty(
+      "--sr",
+      (Math.random() * 720 - 360) + "deg"
+    );
+
+    yesCelebration.appendChild(spark);
+
+    setTimeout(
+      () => spark.remove(),
+      1200
+    );
+  }
+}
+
+
+function setYesScene(
+  emoji,
+  title,
+  text
+){
+
+  sceneEmoji.textContent = emoji;
+  sceneTitle.textContent = title;
+  sceneText.textContent = text;
+
+}
+
+
+function runYesSequence(){
+
+  if(yesSequenceRunning){
+    return;
+  }
+
+  yesSequenceRunning = true;
+
+  vibrate([30,60,30]);
+
+  yesCelebration.classList.add("show");
+
+  yesScene.classList.remove("done");
+
+  yesNews.classList.remove("show");
+
+  yesCountdown.classList.remove("show");
+
+  yesCountdown.textContent = "";
+
+  yesLoaderBar.style.width = "0%";
+
+  yesPercent.textContent =
+    "Compatibility check: 0%";
+
+
+  /*
+     STEP 1 — Dramatic reaction
+  */
+
+  setYesScene(
+    "😳",
+    "WAIT... WHAT?!",
+    "Processing your extremely important decision..."
+  );
+
+  createYesSparks(10);
+
+
+  /*
+     STEP 2 — Fake compatibility scan
+  */
+
+  const scanSteps = [
+    {
+      delay:900,
+      progress:24,
+      emoji:"🧐",
+      title:"Analyzing decision...",
+      text:"Checking whether this is actually happening 👀"
+    },
+    {
+      delay:1900,
+      progress:51,
+      emoji:"🤖",
+      title:"Running compatibility scan...",
+      text:"Coffee preference detected. Very promising ☕"
+    },
+    {
+      delay:2900,
+      progress:78,
+      emoji:"🥹",
+      title:"Checking romance database...",
+      text:"Result: suspiciously cute combination 💕"
+    },
+    {
+      delay:3900,
+      progress:99,
+      emoji:"🚨",
+      title:"SYSTEM ALERT!",
+      text:"Too much happiness detected. Proceeding anyway."
+    }
+  ];
+
+
+  scanSteps.forEach(step => {
+
+    setTimeout(() => {
+
+      yesLoaderBar.style.width =
+        step.progress + "%";
+
+      yesPercent.textContent =
+        "Compatibility check: " +
+        step.progress +
+        "%";
+
+      setYesScene(
+        step.emoji,
+        step.title,
+        step.text
+      );
+
+      createYesSparks(5);
+
+    }, step.delay);
+
+  });
+
+
+  /*
+     STEP 3 — 100%
+  */
+
+  setTimeout(() => {
+
+    yesLoaderBar.style.width = "100%";
+
+    yesPercent.textContent =
+      "Compatibility check: 100% ❤️";
+
+    setYesScene(
+      "💖",
+      "COMPATIBILITY: 100%",
+      "Okay... this is getting dangerously wholesome."
+    );
+
+    createYesSparks(20);
+
+    vibrate([40,60,40,80,80]);
+
+  }, 2400);
+
+
+  /*
+     STEP 4 — Countdown
+  */
+
+  setTimeout(() => {
+
+    yesCountdown.classList.add("show");
+
+    let count = 3;
+
+    yesCountdown.textContent = count;
+
+    const timer =
+      setInterval(() => {
+
+        count--;
+
+        if(count > 0){
+
+          yesCountdown.textContent =
+            count;
+
+          yesCountdown.classList.remove("show");
+
+          void yesCountdown.offsetWidth;
+
+          yesCountdown.classList.add("show");
+
+          vibrate(20);
+
+          return;
+        }
+
+        clearInterval(timer);
+
+        yesCountdown.textContent =
+          "💥";
+
+        createYesSparks(35);
+
+        yesScene.classList.add("done");
+
+        vibrate([50,70,50,70,100]);
+
+      }, 1000);
+
+  }, 2900);
+
+
+  /*
+     STEP 5 — Breaking News
+  */
+
+  setTimeout(() => {
+
+    yesCountdown.classList.remove("show");
+
+    yesNews.classList.add("show");
+
+    setYesScene(
+      "🎉",
+      "IT'S OFFICIAL!",
+      "The coffee committee has approved this decision."
+    );
+
+    createYesSparks(30);
+
+    /*
+       Screen shake
+    */
+
+    yesCelebration.classList.add("yes-shake");
+
+    setTimeout(() => {
+      yesCelebration.classList.remove("yes-shake");
+    }, 500);
+
+  }, 5000);
+
+
+  /*
+     STEP 6 — Open existing date form
+  */
+
+  setTimeout(() => {
+
+    yesCelebration.classList.remove("show");
+
+    overlay.classList.add("show");
+
+    yesSequenceRunning = false;
+
+    createYesSparks(8);
+
+  }, 6900);
+
+}
+
+
 yesBtn.addEventListener(
   "click",
   (e) => {
 
-    vibrate(
-      [20,50,20]
-    );
+    if(yesSequenceRunning){
+      return;
+    }
+
+    /*
+       Prevent the button from accidentally
+       triggering anything else.
+    */
+
+    e.preventDefault();
+
+    const x =
+      typeof e.clientX === "number"
+        ? e.clientX
+        : window.innerWidth / 2;
+
+    const y =
+      typeof e.clientY === "number"
+        ? e.clientY
+        : window.innerHeight / 2;
 
 
-    heartBurst(
-      e.clientX ||
-      window.innerWidth/2,
+    heartBurst(x,y);
 
-      e.clientY ||
-      window.innerHeight/2
-    );
-
-
-    overlay.classList.add(
-      "show"
-    );
+    runYesSequence();
 
   }
 );
