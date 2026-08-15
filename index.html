@@ -1,0 +1,2464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+>
+
+<title>AB Siddik ❤️ Nisha</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+:root{
+  --bg1:#351c3b;
+  --bg2:#120b18;
+
+  --cream:#fff5fb;
+
+  --pink:#ff6f91;
+  --pink-deep:#e0446a;
+
+  /* NEW NO BUTTON COLORS */
+  --no1:#9b8cff;
+  --no2:#7667e8;
+  --no-glow:rgba(139,124,255,.45);
+
+  --gold:#f0bb68;
+}
+
+/* =========================================
+   RESET
+========================================= */
+
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
+html,
+body{
+  margin:0;
+  padding:0;
+  width:100%;
+  min-height:100%;
+}
+
+body{
+
+  min-height:100vh;
+  min-height:100svh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:18px;
+
+  overflow:hidden;
+
+  position:relative;
+
+  color:var(--cream);
+
+  font-family:'Poppins',sans-serif;
+
+  background:
+
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(255,111,145,.25),
+      transparent 40%
+    ),
+
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(139,124,255,.25),
+      transparent 42%
+    ),
+
+    linear-gradient(
+      155deg,
+      var(--bg1),
+      var(--bg2)
+    );
+}
+
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.glow{
+  position:fixed;
+
+  width:220px;
+  height:220px;
+
+  border-radius:50%;
+
+  filter:blur(75px);
+
+  pointer-events:none;
+
+  opacity:.18;
+
+  z-index:0;
+}
+
+.glow.one{
+  background:#ff6f91;
+
+  top:-100px;
+  left:-100px;
+}
+
+.glow.two{
+  background:#897bff;
+
+  bottom:-110px;
+  right:-100px;
+}
+
+
+/* =========================================
+   FLOATING EMOJIS
+========================================= */
+
+.fx{
+  position:fixed;
+
+  inset:0;
+
+  pointer-events:none;
+
+  overflow:hidden;
+
+  z-index:0;
+}
+
+.fx span{
+
+  position:absolute;
+
+  opacity:0;
+
+  user-select:none;
+
+  animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+
+  0%{
+    transform:
+      translateY(110vh)
+      rotate(0deg)
+      scale(.8);
+
+    opacity:0;
+  }
+
+  10%{
+    opacity:.22;
+  }
+
+  80%{
+    opacity:.18;
+  }
+
+  100%{
+    transform:
+      translateY(-15vh)
+      rotate(360deg)
+      scale(1.1);
+
+    opacity:0;
+  }
+
+}
+
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.card{
+
+  position:relative;
+
+  z-index:2;
+
+  width:100%;
+  max-width:430px;
+
+  padding:34px 24px 27px;
+
+  text-align:center;
+
+  background:rgba(255,255,255,.065);
+
+  border:
+    1px solid
+    rgba(255,255,255,.15);
+
+  border-radius:28px;
+
+  backdrop-filter:blur(15px);
+  -webkit-backdrop-filter:blur(15px);
+
+  box-shadow:
+
+    0 25px 70px
+    rgba(0,0,0,.45),
+
+    inset 0 1px 0
+    rgba(255,255,255,.06);
+
+  animation:
+    cardIn .55s
+    cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes cardIn{
+
+  from{
+    opacity:0;
+    transform:
+      translateY(25px)
+      scale(.95);
+  }
+
+  to{
+    opacity:1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* =========================================
+   TOP EMOJI
+========================================= */
+
+.emoji-top{
+
+  font-size:42px;
+
+  line-height:1;
+
+  margin-bottom:12px;
+
+  animation:
+    coffeeFloat
+    3s
+    ease-in-out
+    infinite;
+}
+
+@keyframes coffeeFloat{
+
+  0%,100%{
+    transform:
+      translateY(0)
+      rotate(-2deg);
+  }
+
+  50%{
+    transform:
+      translateY(-7px)
+      rotate(2deg);
+  }
+
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+h1{
+
+  font-size:22px;
+
+  line-height:1.45;
+
+  margin:
+    0 auto
+    10px;
+
+  max-width:360px;
+
+  font-weight:700;
+}
+
+h1 span{
+
+  color:var(--pink);
+
+  text-shadow:
+    0 0 20px
+    rgba(255,111,145,.25);
+}
+
+.subtitle{
+
+  margin:
+    0 0 24px;
+
+  font-size:12px;
+
+  opacity:.62;
+}
+
+
+/* =========================================
+   BUTTON AREA
+========================================= */
+
+.btn-row{
+
+  position:relative;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:15px;
+
+  min-height:105px;
+
+  width:100%;
+}
+
+
+/* =========================================
+   ALL BUTTONS
+========================================= */
+
+button{
+
+  font-family:'Poppins',sans-serif;
+
+  font-weight:700;
+
+  border:0;
+
+  outline:none;
+
+  cursor:pointer;
+
+  touch-action:manipulation;
+
+  transition:
+    transform .25s
+    cubic-bezier(.2,.8,.2,1),
+
+    box-shadow .25s ease,
+
+    background .25s ease;
+}
+
+
+/* =========================================
+   YES BUTTON
+========================================= */
+
+#yesBtn{
+
+  position:relative;
+
+  z-index:5;
+
+  color:#fff;
+
+  font-size:19px;
+
+  padding:
+    17px
+    30px;
+
+  border-radius:15px;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #ff9eb4,
+      var(--pink),
+      var(--pink-deep)
+    );
+
+  box-shadow:
+
+    0 10px 28px
+    rgba(224,68,106,.4),
+
+    inset 0 1px 0
+    rgba(255,255,255,.25);
+}
+
+#yesBtn:hover{
+
+  transform:scale(1.05);
+
+}
+
+#yesBtn:active{
+
+  transform:scale(.96);
+
+}
+
+
+/* =========================================
+   NO BUTTON
+   NEVER SHRINKS
+   NEVER DISAPPEARS
+========================================= */
+
+#noBtn{
+
+  position:relative;
+
+  z-index:10;
+
+  min-width:110px;
+
+  min-height:48px;
+
+  padding:
+    13px
+    22px;
+
+  border-radius:14px;
+
+  color:#fff;
+
+  font-size:15px;
+
+  font-weight:700;
+
+  /* BEAUTIFUL PURPLE COLOR */
+
+  background:
+
+    linear-gradient(
+      135deg,
+      var(--no1),
+      var(--no2)
+    );
+
+  border:
+    1px solid
+    rgba(255,255,255,.2);
+
+  box-shadow:
+
+    0 8px 24px
+    var(--no-glow),
+
+    inset 0 1px 0
+    rgba(255,255,255,.25);
+
+  white-space:nowrap;
+
+  transition:
+
+    left .3s
+    cubic-bezier(.2,.8,.2,1),
+
+    top .3s
+    cubic-bezier(.2,.8,.2,1),
+
+    transform .2s ease,
+
+    box-shadow .25s ease;
+}
+
+
+/*
+  IMPORTANT:
+
+  Button stays EXACTLY the same size.
+*/
+
+#noBtn.fixed-pos{
+
+  position:fixed;
+
+  z-index:60;
+
+}
+
+
+/* Hover */
+
+#noBtn:hover{
+
+  box-shadow:
+
+    0 10px 30px
+    rgba(139,124,255,.65),
+
+    inset 0 1px 0
+    rgba(255,255,255,.3);
+
+}
+
+
+/* Tiny movement animation */
+
+.no-jump{
+
+  animation:
+    noJump .3s
+    cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes noJump{
+
+  0%{
+    transform:scale(1);
+  }
+
+  40%{
+    transform:
+      scale(1.08)
+      rotate(-2deg);
+  }
+
+  100%{
+    transform:
+      scale(1)
+      rotate(0);
+  }
+
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status{
+
+  min-height:22px;
+
+  margin-top:12px;
+
+  font-size:12px;
+
+  color:#c5bbff;
+
+  opacity:.9;
+
+  transition:
+    opacity .2s ease;
+}
+
+.status.pop{
+
+  animation:
+    statusPop .3s ease;
+}
+
+@keyframes statusPop{
+
+  0%{
+    opacity:0;
+    transform:translateY(4px);
+  }
+
+  100%{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+.footnote{
+
+  margin-top:15px;
+
+  font-size:11px;
+
+  opacity:.45;
+}
+
+
+/* =========================================
+   HEART POP
+========================================= */
+
+.heart-pop{
+
+  position:fixed;
+
+  z-index:100;
+
+  pointer-events:none;
+
+  font-size:20px;
+
+  animation:
+    heartPop .8s
+    ease
+    forwards;
+}
+
+@keyframes heartPop{
+
+  0%{
+
+    opacity:1;
+
+    transform:
+      translate(-50%,-50%)
+      scale(.5);
+  }
+
+  60%{
+
+    opacity:1;
+
+    transform:
+
+      translate(
+        calc(-50% + var(--x)),
+        calc(-50% + var(--y))
+      )
+
+      scale(1.15);
+  }
+
+  100%{
+
+    opacity:0;
+
+    transform:
+
+      translate(
+        calc(-50% + var(--x)),
+        calc(-50% + var(--y) - 35px)
+      )
+
+      scale(.8);
+  }
+
+}
+
+
+/* =========================================
+   TOAST
+========================================= */
+
+.toast{
+
+  position:fixed;
+
+  left:50%;
+  bottom:24px;
+
+  transform:
+    translate(-50%,20px);
+
+  background:
+    rgba(20,10,25,.92);
+
+  border:
+    1px solid
+    rgba(255,255,255,.13);
+
+  color:var(--cream);
+
+  padding:
+    10px
+    17px;
+
+  border-radius:999px;
+
+  font-size:12px;
+
+  opacity:0;
+
+  pointer-events:none;
+
+  z-index:500;
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease;
+
+  max-width:90vw;
+
+  text-align:center;
+}
+
+.toast.show{
+
+  opacity:1;
+
+  transform:
+    translate(-50%,0);
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.overlay{
+
+  position:fixed;
+
+  inset:0;
+
+  background:
+    rgba(10,5,12,.95);
+
+  display:none;
+
+  align-items:center;
+
+  justify-content:center;
+
+  z-index:200;
+
+  padding:18px;
+
+  overflow:auto;
+}
+
+.overlay.show{
+
+  display:flex;
+
+  animation:
+    overlayIn .3s ease;
+}
+
+@keyframes overlayIn{
+
+  from{
+    opacity:0;
+  }
+
+  to{
+    opacity:1;
+  }
+
+}
+
+
+/* =========================================
+   SUCCESS CARD
+========================================= */
+
+.success{
+
+  width:100%;
+
+  max-width:420px;
+
+  padding:
+    30px
+    23px;
+
+  text-align:center;
+
+  border-radius:26px;
+
+  background:
+
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.09),
+      rgba(255,255,255,.045)
+    );
+
+  border:
+    1px solid
+    rgba(255,255,255,.16);
+
+  box-shadow:
+    0 25px 80px
+    rgba(0,0,0,.45);
+
+  animation:
+    pop .4s
+    cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes pop{
+
+  0%{
+    transform:
+      scale(.84)
+      translateY(15px);
+
+    opacity:0;
+  }
+
+  100%{
+    transform:
+      scale(1)
+      translateY(0);
+
+    opacity:1;
+  }
+
+}
+
+.success .big-emoji{
+
+  font-size:48px;
+
+  line-height:1;
+
+  margin-bottom:10px;
+}
+
+.success h2{
+
+  margin:
+    0 0 8px;
+
+  font-size:22px;
+
+  color:var(--gold);
+}
+
+.success p{
+
+  font-size:13px;
+
+  opacity:.78;
+
+  margin:
+    0 0 20px;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.field{
+
+  text-align:left;
+
+  margin-bottom:15px;
+}
+
+.field label{
+
+  display:block;
+
+  font-size:12px;
+
+  margin-bottom:6px;
+
+  font-weight:600;
+
+  opacity:.9;
+}
+
+.field input,
+.field select{
+
+  width:100%;
+
+  padding:12px;
+
+  border-radius:11px;
+
+  border:
+    1px solid
+    rgba(255,255,255,.16);
+
+  background:
+    rgba(0,0,0,.28);
+
+  color:var(--cream);
+
+  font-family:'Poppins',sans-serif;
+
+  font-size:14px;
+
+  outline:none;
+}
+
+.field input:focus,
+.field select:focus{
+
+  border-color:
+    rgba(139,124,255,.7);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(139,124,255,.1);
+}
+
+.field option{
+
+  background:#25172c;
+
+  color:#fff;
+}
+
+
+/* =========================================
+   CONFIRM BUTTON
+========================================= */
+
+.confirm-btn{
+
+  width:100%;
+
+  padding:14px;
+
+  margin-top:4px;
+
+  border-radius:13px;
+
+  color:#fff;
+
+  font-size:16px;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      var(--pink),
+      var(--pink-deep)
+    );
+
+  box-shadow:
+    0 10px 25px
+    rgba(224,68,106,.3);
+}
+
+.confirm-btn:hover{
+
+  transform:scale(1.02);
+}
+
+
+/* =========================================
+   FINAL MESSAGE
+========================================= */
+
+.final-msg{
+
+  display:none;
+}
+
+.final-msg.show{
+
+  display:block;
+}
+
+.final-msg .big-emoji{
+
+  font-size:52px;
+}
+
+.final-msg h2{
+
+  color:var(--pink);
+}
+
+.plan-box{
+
+  background:
+    rgba(0,0,0,.25);
+
+  border-radius:13px;
+
+  padding:
+    14px 15px;
+
+  text-align:left;
+
+  font-size:13px;
+
+  margin:
+    15px 0;
+
+  line-height:1.9;
+}
+
+.plan-box b{
+
+  color:var(--gold);
+}
+
+.coffee-note{
+
+  background:
+    rgba(232,165,82,.12);
+
+  border:
+    1px solid
+    rgba(232,165,82,.35);
+
+  border-radius:13px;
+
+  padding:
+    12px 14px;
+
+  font-size:12px;
+}
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+.confetti{
+
+  position:fixed;
+
+  top:-15px;
+
+  z-index:250;
+
+  pointer-events:none;
+
+  border-radius:3px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:480px){
+
+  body{
+    padding:13px;
+  }
+
+  .card{
+
+    padding:
+      30px
+      19px
+      23px;
+
+    border-radius:24px;
+  }
+
+  .emoji-top{
+
+    font-size:38px;
+  }
+
+  h1{
+
+    font-size:19px;
+
+    line-height:1.5;
+  }
+
+  .subtitle{
+
+    font-size:11px;
+  }
+
+  .btn-row{
+
+    min-height:120px;
+
+    gap:10px;
+  }
+
+  #yesBtn{
+
+    font-size:17px;
+
+    padding:
+      16px
+      25px;
+  }
+
+  /*
+    NO stays the same size
+  */
+
+  #noBtn{
+
+    min-width:105px;
+
+    min-height:46px;
+
+    font-size:14px;
+
+    padding:
+      12px
+      20px;
+  }
+
+  .success{
+
+    padding:
+      27px
+      19px;
+  }
+
+}
+
+
+/* =========================================
+   SHORT MOBILE SCREEN
+========================================= */
+
+@media(max-height:650px){
+
+  .card{
+
+    padding-top:22px;
+
+    padding-bottom:18px;
+  }
+
+  .emoji-top{
+
+    margin-bottom:6px;
+  }
+
+  h1{
+
+    margin-bottom:6px;
+
+    font-size:18px;
+  }
+
+  .subtitle{
+
+    margin-bottom:12px;
+  }
+
+  .btn-row{
+
+    min-height:90px;
+  }
+
+  .footnote{
+
+    margin-top:7px;
+  }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+
+    animation-duration:.001ms !important;
+
+    animation-iteration-count:1 !important;
+
+    transition-duration:.001ms !important;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- BACKGROUND -->
+
+<div class="glow one"></div>
+<div class="glow two"></div>
+
+<div
+  class="fx"
+  id="fx">
+</div>
+
+
+<!-- MAIN CARD -->
+
+<div class="card">
+
+  <div class="emoji-top">
+    ☕💕
+  </div>
+
+
+  <h1>
+
+    Hi <span>Nisha!</span> Will you go on a date with
+
+    <span>
+      AB Siddik
+    </span>
+
+    ? 🥰
+
+  </h1>
+
+
+  <p class="subtitle">
+    One simple question... probably 👀
+  </p>
+
+
+  <div
+    class="btn-row"
+    id="btnRow"
+  >
+
+    <button id="yesBtn">
+      Yes 💖
+    </button>
+
+
+    <button id="noBtn">
+      No
+    </button>
+
+  </div>
+
+
+  <div
+    class="status"
+    id="status"
+  >
+    The coffee committee is waiting ☕
+  </div>
+
+
+  <div class="footnote">
+    just tap a button 😄
+  </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+  class="toast"
+  id="toast">
+</div>
+
+
+<!-- YES OVERLAY -->
+
+<div
+  class="overlay"
+  id="overlay"
+>
+
+
+  <!-- FORM -->
+
+  <div
+    class="success"
+    id="formStep"
+  >
+
+    <div class="big-emoji">
+      🎉💗
+    </div>
+
+
+    <h2>
+      Yay! You said Yes!
+    </h2>
+
+
+    <p>
+      Let's plan it! Pick the date, time and food 👇
+    </p>
+
+
+    <div class="field">
+
+      <label>
+        📅 Date
+      </label>
+
+      <input
+        type="date"
+        id="dateInput"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        ⏰ Time
+      </label>
+
+      <input
+        type="time"
+        id="timeInput"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>
+        🍽️ What do you want to eat?
+      </label>
+
+      <select id="foodInput">
+
+        <option value="">
+          Choose something 😋
+        </option>
+
+        <option value="Coffee ☕">
+          Coffee ☕
+        </option>
+
+        <option value="Pizza 🍕">
+          Pizza 🍕
+        </option>
+
+        <option value="Biryani 🍛">
+          Biryani 🍛
+        </option>
+
+        <option value="Ice Cream 🍦">
+          Ice Cream 🍦
+        </option>
+
+        <option value="Fuchka 🌶️">
+          Fuchka 🌶️
+        </option>
+
+        <option value="Burger 🍔">
+          Burger 🍔
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <button
+      class="confirm-btn"
+      id="confirmBtn"
+    >
+      Confirm Date 💌
+    </button>
+
+  </div>
+
+
+  <!-- FINAL -->
+
+  <div
+    class="success final-msg"
+    id="finalStep"
+  >
+
+    <div class="big-emoji">
+      ☕❤️
+    </div>
+
+
+    <h2>
+      It's a date!
+    </h2>
+
+
+    <div class="plan-box">
+
+      <div>
+        📅
+        <b>Date:</b>
+        <span id="rDate">-</span>
+      </div>
+
+      <div>
+        ⏰
+        <b>Time:</b>
+        <span id="rTime">-</span>
+      </div>
+
+      <div>
+        🍽️
+        <b>Food:</b>
+        <span id="rFood">-</span>
+      </div>
+
+    </div>
+
+
+    <div class="coffee-note">
+      ☕ Reminder: You must bring coffee for AB Siddik! 😄💕
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+
+/* =========================================
+   FLOATING EMOJIS
+========================================= */
+
+const fx =
+  document.getElementById("fx");
+
+const symbols = [
+  "☕",
+  "💖",
+  "✨",
+  "💕",
+  "🌸",
+  "💗",
+  "⭐",
+  "🦋"
+];
+
+
+for(let i=0; i<18; i++){
+
+  const s =
+    document.createElement("span");
+
+  s.textContent =
+    symbols[
+      Math.floor(
+        Math.random() *
+        symbols.length
+      )
+    ];
+
+  s.style.left =
+    Math.random() * 100 + "vw";
+
+  s.style.fontSize =
+    (14 + Math.random() * 18) + "px";
+
+  s.style.animationDuration =
+    (8 + Math.random() * 10) + "s";
+
+  s.style.animationDelay =
+    (Math.random() * 10) + "s";
+
+  fx.appendChild(s);
+}
+
+
+/* =========================================
+   ELEMENTS
+========================================= */
+
+const noBtn =
+  document.getElementById("noBtn");
+
+const yesBtn =
+  document.getElementById("yesBtn");
+
+const status =
+  document.getElementById("status");
+
+const toast =
+  document.getElementById("toast");
+
+const overlay =
+  document.getElementById("overlay");
+
+const formStep =
+  document.getElementById("formStep");
+
+const finalStep =
+  document.getElementById("finalStep");
+
+const confirmBtn =
+  document.getElementById("confirmBtn");
+
+
+/* =========================================
+   LOOP TEXT
+========================================= */
+
+/*
+  IMPORTANT:
+
+  No button NEVER gets smaller.
+  No button NEVER disappears.
+  These messages simply repeat forever.
+*/
+
+const noTexts = [
+
+  "No",
+
+  "Are you sure? 👀",
+
+  "Really? 🥺",
+
+  "Think again 💭",
+
+  "Nisha please 🥹",
+
+  "Please? 💗",
+
+  "One more thought? 👀",
+
+  "Don't do this 😭",
+
+  "Coffee is waiting ☕",
+
+  "But... why? 🥲",
+
+  "The Yes button is sad 😭",
+
+  "Still No? 😭",
+
+  "Seriously? 👀",
+
+  "You clicked No again 😂",
+
+  "The button disagrees 🤨",
+
+  "Nice try 😭",
+
+  "Maybe? 🥺",
+
+  "Just consider it 💕",
+
+  "One tiny Yes? 👉👈",
+
+  "Okay but... really? 😭",
+
+  "Nisha 😭",
+
+  "Please reconsider 💗",
+
+  "Last chance... again 👀",
+
+  "Still here? 😂",
+
+  "No is getting popular 😭",
+
+  "The coffee committee objects ☕",
+
+  "This button refuses to give up 😂",
+
+  "Are we sure about this? 🥹",
+
+  "Maybe the answer is Yes? 💖",
+
+  "Okay... try No again 😭"
+
+];
+
+
+/*
+  Status messages also loop.
+*/
+
+const statusTexts = [
+
+  "Hmm... interesting choice 👀",
+
+  "The No button is feeling brave 😂",
+
+  "It moved! You can't catch it 😭",
+
+  "Nisha please... coffee is waiting ☕",
+
+  "The button has trust issues now 😂",
+
+  "Still trying? Respect 😭",
+
+  "The Yes button is getting jealous 💗",
+
+  "This is becoming a serious investigation 👀",
+
+  "No button.exe is running perfectly 😂",
+
+  "Human persistence detected 🤖",
+
+  "The coffee committee is confused ☕",
+
+  "Maybe give Yes a chance? 🥺",
+
+  "That was almost close! 😭",
+
+  "You are really committed to No 😂",
+
+  "The button has entered escape mode 🏃",
+
+  "Round and round we go 💕",
+
+  "No button says: try again 😌",
+
+  "This could continue forever 😂",
+
+  "Still no? Legendary persistence 😭",
+
+  "Okay, one more round 👀"
+
+];
+
+
+let textIndex = 0;
+
+let statusIndex = 0;
+
+
+/* =========================================
+   VIBRATION
+========================================= */
+
+function vibrate(pattern = 15){
+
+  if(
+    navigator.vibrate &&
+    typeof navigator.vibrate === "function"
+  ){
+
+    navigator.vibrate(pattern);
+
+  }
+
+}
+
+
+/* =========================================
+   TOAST
+========================================= */
+
+function showToast(message){
+
+  toast.textContent =
+    message;
+
+  toast.classList.add("show");
+
+  clearTimeout(
+    window.toastTimer
+  );
+
+  window.toastTimer =
+    setTimeout(
+      () => {
+
+        toast.classList.remove("show");
+
+      },
+      1500
+    );
+
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+function updateStatus(){
+
+  status.classList.remove("pop");
+
+  void status.offsetWidth;
+
+  status.textContent =
+    statusTexts[statusIndex];
+
+  status.classList.add("pop");
+
+  statusIndex =
+    (statusIndex + 1)
+    % statusTexts.length;
+
+}
+
+
+/* =========================================
+   HEART BURST
+========================================= */
+
+function heartBurst(x,y){
+
+  const hearts = [
+    "💗",
+    "💕",
+    "💖",
+    "✨",
+    "❤️"
+  ];
+
+
+  for(let i=0; i<5; i++){
+
+    const heart =
+      document.createElement("div");
+
+    heart.className =
+      "heart-pop";
+
+    heart.textContent =
+      hearts[
+        Math.floor(
+          Math.random() *
+          hearts.length
+        )
+      ];
+
+    heart.style.left =
+      x + "px";
+
+    heart.style.top =
+      y + "px";
+
+    heart.style.setProperty(
+      "--x",
+      (Math.random()*100 - 50) + "px"
+    );
+
+    heart.style.setProperty(
+      "--y",
+      (Math.random()*80 - 40) + "px"
+    );
+
+    document.body.appendChild(
+      heart
+    );
+
+
+    setTimeout(
+      () => heart.remove(),
+      900
+    );
+
+  }
+
+}
+
+
+/* =========================================
+   SAFE RANDOM POSITION
+========================================= */
+
+function getSafePosition(
+  clientX,
+  clientY
+){
+
+  const rect =
+    noBtn.getBoundingClientRect();
+
+  const margin = 18;
+
+  const width =
+    rect.width;
+
+  const height =
+    rect.height;
+
+
+  const maxX =
+    Math.max(
+      margin,
+      window.innerWidth -
+      width -
+      margin
+    );
+
+
+  const maxY =
+    Math.max(
+      margin,
+      window.innerHeight -
+      height -
+      margin
+    );
+
+
+  let nx;
+  let ny;
+
+  /*
+    Keep it away from finger/cursor.
+  */
+
+  const avoidDistance =
+    Math.min(
+      240,
+      Math.max(
+        130,
+        window.innerWidth * .22
+      )
+    );
+
+
+  let tries = 0;
+
+
+  do{
+
+    nx =
+      margin +
+      Math.random() *
+      Math.max(
+        1,
+        maxX - margin
+      );
+
+
+    ny =
+      margin +
+      Math.random() *
+      Math.max(
+        1,
+        maxY - margin
+      );
+
+
+    tries++;
+
+  }
+
+  while(
+
+    clientX !== undefined &&
+
+    clientY !== undefined &&
+
+    Math.hypot(
+      nx - clientX,
+      ny - clientY
+    ) < avoidDistance &&
+
+    tries < 20
+
+  );
+
+
+  return {
+
+    x:Math.min(
+      Math.max(nx,margin),
+      window.innerWidth -
+      width -
+      margin
+    ),
+
+    y:Math.min(
+      Math.max(ny,margin),
+      window.innerHeight -
+      height -
+      margin
+    )
+
+  };
+
+}
+
+
+/* =========================================
+   MOVE NO BUTTON
+========================================= */
+
+function moveNoButton(
+  clientX,
+  clientY
+){
+
+  /*
+    LOOP TEXT
+
+    When reaching the end,
+    start from the beginning.
+  */
+
+  noBtn.textContent =
+    noTexts[textIndex];
+
+
+  textIndex =
+    (textIndex + 1)
+    % noTexts.length;
+
+
+  /*
+    IMPORTANT:
+
+    No font-size change.
+    No padding change.
+    No opacity change.
+    No disappearing.
+  */
+
+
+  /*
+    After first interaction,
+    make it fixed.
+  */
+
+  noBtn.classList.add(
+    "fixed-pos"
+  );
+
+
+  /*
+    Get safe random position.
+  */
+
+  const position =
+    getSafePosition(
+      clientX,
+      clientY
+    );
+
+
+  noBtn.style.left =
+    position.x + "px";
+
+
+  noBtn.style.top =
+    position.y + "px";
+
+
+  /*
+    Tiny cute jump animation.
+  */
+
+  noBtn.classList.remove(
+    "no-jump"
+  );
+
+  void noBtn.offsetWidth;
+
+  noBtn.classList.add(
+    "no-jump"
+  );
+
+
+  /*
+    Feedback.
+  */
+
+  updateStatus();
+
+  showToast(
+    "Nice try 😂"
+  );
+
+  vibrate(12);
+
+
+  /*
+    Heart effect.
+  */
+
+  if(
+    clientX !== undefined &&
+    clientY !== undefined
+  ){
+
+    heartBurst(
+      clientX,
+      clientY
+    );
+
+  }
+
+}
+
+
+/* =========================================
+   DESKTOP MOUSE
+========================================= */
+
+noBtn.addEventListener(
+  "mouseenter",
+  (e) => {
+
+    moveNoButton(
+      e.clientX,
+      e.clientY
+    );
+
+  }
+);
+
+
+/* =========================================
+   DESKTOP CLICK
+========================================= */
+
+noBtn.addEventListener(
+  "click",
+  (e) => {
+
+    e.preventDefault();
+
+    moveNoButton(
+      e.clientX,
+      e.clientY
+    );
+
+  }
+);
+
+
+/* =========================================
+   MOBILE TOUCH
+========================================= */
+
+noBtn.addEventListener(
+  "touchstart",
+  (e) => {
+
+    e.preventDefault();
+
+    const touch =
+      e.touches[0];
+
+    moveNoButton(
+      touch.clientX,
+      touch.clientY
+    );
+
+  },
+  {
+    passive:false
+  }
+);
+
+
+/* =========================================
+   YES BUTTON
+========================================= */
+
+yesBtn.addEventListener(
+  "click",
+  (e) => {
+
+    vibrate(
+      [20,50,20]
+    );
+
+
+    heartBurst(
+      e.clientX ||
+      window.innerWidth/2,
+
+      e.clientY ||
+      window.innerHeight/2
+    );
+
+
+    overlay.classList.add(
+      "show"
+    );
+
+  }
+);
+
+
+/* =========================================
+   DATE
+========================================= */
+
+const dateInput =
+  document.getElementById(
+    "dateInput"
+  );
+
+
+const today =
+  new Date();
+
+
+const localToday =
+  new Date(
+    today.getTime() -
+    today.getTimezoneOffset()
+    * 60000
+  )
+  .toISOString()
+  .split("T")[0];
+
+
+dateInput.min =
+  localToday;
+
+
+/* =========================================
+   CONFIRM
+========================================= */
+
+confirmBtn.addEventListener(
+  "click",
+  () => {
+
+    const d =
+      dateInput.value;
+
+    const t =
+      document
+        .getElementById(
+          "timeInput"
+        )
+        .value;
+
+    const f =
+      document
+        .getElementById(
+          "foodInput"
+        )
+        .value;
+
+
+    document
+      .getElementById("rDate")
+      .textContent =
+        d
+          ? formatDate(d)
+          : "not chosen yet";
+
+
+    document
+      .getElementById("rTime")
+      .textContent =
+        t
+          ? formatTime(t)
+          : "not chosen yet";
+
+
+    document
+      .getElementById("rFood")
+      .textContent =
+        f
+          ? f
+          : "not chosen yet";
+
+
+    formStep.style.display =
+      "none";
+
+
+    finalStep.classList.add(
+      "show"
+    );
+
+
+    vibrate(
+      [30,60,30,60,50]
+    );
+
+
+    launchConfetti();
+
+  }
+);
+
+
+/* =========================================
+   DATE FORMAT
+========================================= */
+
+function formatDate(value){
+
+  const date =
+    new Date(
+      value + "T00:00:00"
+    );
+
+
+  return date.toLocaleDateString(
+    "en-US",
+    {
+      weekday:"short",
+      year:"numeric",
+      month:"short",
+      day:"numeric"
+    }
+  );
+
+}
+
+
+/* =========================================
+   TIME FORMAT
+========================================= */
+
+function formatTime(value){
+
+  const parts =
+    value.split(":");
+
+  const date =
+    new Date();
+
+  date.setHours(
+    Number(parts[0]),
+    Number(parts[1])
+  );
+
+
+  return date.toLocaleTimeString(
+    "en-US",
+    {
+      hour:"numeric",
+      minute:"2-digit"
+    }
+  );
+
+}
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+function launchConfetti(){
+
+  const colors = [
+
+    "#ff6f91",
+    "#e8a552",
+    "#fff3e6",
+    "#e0446a",
+    "#9b8cff",
+    "#7667e8"
+
+  ];
+
+
+  for(
+    let i=0;
+    i<75;
+    i++
+  ){
+
+    const c =
+      document.createElement(
+        "div"
+      );
+
+
+    c.className =
+      "confetti";
+
+
+    c.style.left =
+      Math.random()*100 +
+      "vw";
+
+
+    c.style.width =
+      (5+Math.random()*7) +
+      "px";
+
+
+    c.style.height =
+      (5+Math.random()*7) +
+      "px";
+
+
+    c.style.background =
+      colors[
+        Math.floor(
+          Math.random() *
+          colors.length
+        )
+      ];
+
+
+    if(
+      Math.random() > .5
+    ){
+
+      c.style.borderRadius =
+        "50%";
+
+    }
+
+
+    document.body.appendChild(c);
+
+
+    const duration =
+      1800 +
+      Math.random()*1800;
+
+
+    const rotate =
+      Math.random()*900 -
+      450;
+
+
+    const x =
+      Math.random()*180 -
+      90;
+
+
+    c.animate(
+
+      [
+
+        {
+          transform:
+            "translate(0,0) rotate(0deg)",
+
+          opacity:1
+        },
+
+        {
+
+          transform:
+            `translate(${x}px,${window.innerHeight+50}px) rotate(${rotate}deg)`,
+
+          opacity:.9
+
+        }
+
+      ],
+
+      {
+        duration:duration,
+
+        easing:
+          "cubic-bezier(.2,.7,.3,1)"
+      }
+
+    );
+
+
+    setTimeout(
+      () => c.remove(),
+      duration + 100
+    );
+
+  }
+
+}
+
+
+/* =========================================
+   RESIZE SAFETY
+========================================= */
+
+window.addEventListener(
+  "resize",
+  () => {
+
+    if(
+      noBtn.classList.contains(
+        "fixed-pos"
+      )
+    ){
+
+      const rect =
+        noBtn.getBoundingClientRect();
+
+      const margin = 18;
+
+
+      const maxX =
+        window.innerWidth -
+        rect.width -
+        margin;
+
+
+      const maxY =
+        window.innerHeight -
+        rect.height -
+        margin;
+
+
+      noBtn.style.left =
+
+        Math.min(
+          Math.max(
+            rect.left,
+            margin
+          ),
+
+          Math.max(
+            margin,
+            maxX
+          )
+
+        ) + "px";
+
+
+      noBtn.style.top =
+
+        Math.min(
+          Math.max(
+            rect.top,
+            margin
+          ),
+
+          Math.max(
+            margin,
+            maxY
+          )
+
+        ) + "px";
+
+    }
+
+  }
+);
+
+
+/* =========================================
+   DOUBLE TAP CARD
+========================================= */
+
+document
+  .querySelector(".card")
+  .addEventListener(
+    "dblclick",
+    (e) => {
+
+      heartBurst(
+        e.clientX,
+        e.clientY
+      );
+
+    }
+  );
+
+
+</script>
+
+</body>
+</html>
